@@ -1,0 +1,228 @@
+
+> Task :compileJava FAILED
+gradle : C:\Users\leand\OneDri
+ve\Documentos\Hytale mcp\Mods 
+creados\LincerosLevelTools\src
+\main\java\com\linceros\levelt
+ools\command\LevelToolsCommand
+.java:78: warning: [removal] 
+getUuid() in Entity has been 
+deprecated and marked for 
+removal
+En l?nea: 1 Car?cter: 1
++ gradle compileJava 
+--console=plain 2>&1 | 
+Out-File build.log -Encodin 
+...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~
+    + CategoryInfo          : 
+    NotSpecified: (C:\Users\  
+  leand\...ked for removal:   
+ String) [], RemoteExcepti    
+on
+    + FullyQualifiedErrorId : 
+    NativeCommandError
+ 
+            PlayerRef ref = Un
+iverse.get().getPlayer(player.
+getUuid());
+                              
+                             ^
+C:\Users\leand\OneDrive\Docume
+ntos\Hytale mcp\Mods creados\L
+incerosLevelTools\src\main\jav
+a\com\linceros\leveltools\comm
+and\LevelToolsCommand.java:117
+: warning: [removal] 
+getUuid() in Entity has been 
+deprecated and marked for 
+removal
+                PlayerRef 
+playerRef = Universe.get().get
+Player(player.getUuid());
+                              
+                              
+         ^
+C:\Users\leand\OneDrive\Docume
+ntos\Hytale mcp\Mods creados\L
+incerosLevelTools\src\main\jav
+a\com\linceros\leveltools\comm
+and\LevelToolsCommand.java:257
+: warning: [removal] 
+getUuid() in Entity has been 
+deprecated and marked for 
+removal
+                LevelToolsPlug
+in.getHudService().forceRefres
+h(player.getUuid());
+                              
+                              
+        ^
+C:\Users\leand\OneDrive\Docume
+ntos\Hytale mcp\Mods creados\L
+incerosLevelTools\src\main\jav
+a\com\linceros\leveltools\Leve
+lToolsPlugin.java:111: 
+warning: [removal] getUuid() 
+in Entity has been deprecated 
+and marked for removal
+        PlayerRef ref = Univer
+se.get().getPlayer(player.getU
+uid());
+                              
+                         ^
+C:\Users\leand\OneDrive\Docume
+ntos\Hytale mcp\Mods creados\L
+incerosLevelTools\src\main\jav
+a\com\linceros\leveltools\Leve
+lToolsSystem.java:253: 
+warning: [removal] getUuid() 
+in Entity has been deprecated 
+and marked for removal
+        LevelToolsPlugin.getHu
+dService().forceRefresh(player
+.getUuid());
+                              
+                              
+^
+C:\Users\leand\OneDrive\Docume
+ntos\Hytale mcp\Mods creados\L
+incerosLevelTools\src\main\jav
+a\com\linceros\leveltools\page
+\TokenPage.java:132: error: 
+rebuild() in TokenPage cannot 
+override rebuild() in 
+CustomUIPage
+    private void rebuild() {
+                 ^
+  attempting to assign weaker 
+access privileges; was 
+protected
+Note: Some input files use or 
+override a deprecated API.
+Note: Recompile with 
+-Xlint:deprecation for 
+details.
+1 error
+5 warnings
+
+[Incubating] Problems report is available at: file:///C:/Users/leand/OneDrive/Documentos/Hytale%20mcp/Mods%20creados/LincerosLevelTools/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an 
+exception.
+
+* What went wrong:
+Execution failed for task 
+':compileJava'.
+> Compilation failed; see the 
+compiler output below.
+  Note: Recompile with 
+-Xlint:deprecation for 
+details.
+  C:\Users\leand\OneDrive\Docu
+mentos\Hytale mcp\Mods creados
+\LincerosLevelTools\src\main\j
+ava\com\linceros\leveltools\pa
+ge\TokenPage.java:132: error: 
+rebuild() in TokenPage cannot 
+override rebuild() in 
+CustomUIPage
+      private void rebuild() {
+                   ^
+    attempting to assign 
+weaker access privileges; was 
+protected
+  Note: Some input files use 
+or override a deprecated API.
+  C:\Users\leand\OneDrive\Docu
+mentos\Hytale mcp\Mods creados
+\LincerosLevelTools\src\main\j
+ava\com\linceros\leveltools\co
+mmand\LevelToolsCommand.java:7
+8: warning: [removal] 
+getUuid() in Entity has been 
+deprecated and marked for 
+removal
+              PlayerRef ref = 
+Universe.get().getPlayer(playe
+r.getUuid());
+                              
+                              
+ ^
+  C:\Users\leand\OneDrive\Docu
+mentos\Hytale mcp\Mods creados
+\LincerosLevelTools\src\main\j
+ava\com\linceros\leveltools\co
+mmand\LevelToolsCommand.java:1
+17: warning: [removal] 
+getUuid() in Entity has been 
+deprecated and marked for 
+removal
+                  PlayerRef 
+playerRef = Universe.get().get
+Player(player.getUuid());
+                              
+                              
+           ^
+  C:\Users\leand\OneDrive\Docu
+mentos\Hytale mcp\Mods creados
+\LincerosLevelTools\src\main\j
+ava\com\linceros\leveltools\co
+mmand\LevelToolsCommand.java:2
+57: warning: [removal] 
+getUuid() in Entity has been 
+deprecated and marked for 
+removal
+                  LevelToolsPl
+ugin.getHudService().forceRefr
+esh(player.getUuid());
+                              
+                              
+          ^
+  C:\Users\leand\OneDrive\Docu
+mentos\Hytale mcp\Mods creados
+\LincerosLevelTools\src\main\j
+ava\com\linceros\leveltools\Le
+velToolsPlugin.java:111: 
+warning: [removal] getUuid() 
+in Entity has been deprecated 
+and marked for removal
+          PlayerRef ref = Univ
+erse.get().getPlayer(player.ge
+tUuid());
+                              
+                           ^
+  C:\Users\leand\OneDrive\Docu
+mentos\Hytale mcp\Mods creados
+\LincerosLevelTools\src\main\j
+ava\com\linceros\leveltools\Le
+velToolsSystem.java:253: 
+warning: [removal] getUuid() 
+in Entity has been deprecated 
+and marked for removal
+          LevelToolsPlugin.get
+HudService().forceRefresh(play
+er.getUuid());
+                              
+                              
+  ^
+  1 error
+  5 warnings
+
+* Try:
+> Check your code and 
+dependencies to fix the 
+compilation error(s)
+> Run with --scan to get full 
+insights from a Build Scan 
+(powered by Develocity).
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/9.3.0/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 842ms
+1 actionable task: 1 executed

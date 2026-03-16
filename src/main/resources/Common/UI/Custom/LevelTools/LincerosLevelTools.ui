@@ -1,0 +1,71 @@
+$Common = "../Common.ui";
+
+Group #LevelToolsRoot {
+    Visible: false;
+    Anchor: (Width: 210, Height: 100, Left: 20, Bottom: 100);
+    LayoutMode: Top;
+
+    $Common.@SimpleContainer #LevelToolsMainBox {
+        Anchor: (Width: 210, Height: 98);
+        LayoutMode: Top;
+        Padding: (Top: 8, Bottom: 8, Left: 12, Right: 12);
+
+        // Tool / weapon name
+        Group #ToolNameSection {
+            Anchor: (Height: 20);
+            Label #ToolName {
+                Text: "Iron Pickaxe";
+                Anchor: (Height: 20);
+                Style: (FontSize: 13, TextColor: #E8A93B, RenderBold: true, RenderUppercase: true, VerticalAlignment: Center);
+                HitTestVisible: false;
+            }
+        }
+
+        $Common.@PanelSeparatorFancy { @Anchor = (Top: 3, Bottom: 3); }
+
+        // Level  /  max  ·  percentage
+        Group #LevelAndExpSection {
+            Anchor: (Height: 18);
+            LayoutMode: Left;
+
+            Label #LevelText {
+                Text: "Lv. 0/∞";
+                Anchor: (Height: 18);
+                Style: (FontSize: 13, TextColor: #96b8e0, RenderBold: true, VerticalAlignment: Center);
+                HitTestVisible: false;
+            }
+
+            Group { FlexWeight: 1; }
+
+            Label #ExpPercent {
+                Text: "0%";
+                Anchor: (Width: 36, Height: 18);
+                Style: (FontSize: 11, TextColor: #878e9c, VerticalAlignment: Center, HorizontalAlignment: End);
+                HitTestVisible: false;
+            }
+        }
+
+        // EXP bar
+        Group #ExpBarSection {
+            Anchor: (Height: 8, Top: 4);
+            LayoutMode: Center;
+            ProgressBar #ExpBar {
+                Anchor: (Width: 178, Height: 6);
+                Value: 0.0;
+                BarTexturePath: "Assets/ExpBar.png";
+            }
+        }
+
+        // Durability numbers
+        Group #ExpTextSection {
+            Anchor: (Height: 11, Top: 3);
+            LayoutMode: Center;
+            Label #ExpText {
+                Text: "0 / 100";
+                Anchor: (Height: 11);
+                Style: (FontSize: 9, TextColor: #5a6a7a, VerticalAlignment: Center, HorizontalAlignment: Center);
+                HitTestVisible: false;
+            }
+        }
+    }
+}

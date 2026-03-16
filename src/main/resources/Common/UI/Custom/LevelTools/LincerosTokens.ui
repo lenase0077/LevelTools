@@ -1,0 +1,282 @@
+$Common = "../Common.ui";
+$Sounds = "../Sounds.ui";
+
+Group #TokenRoot {
+    Visible: true;
+    Anchor: (Top: 0, Bottom: 0, Left: 0, Right: 0);
+    LayoutMode: Center;
+
+    $Common.@Panel #TokensMainWindow {
+        Anchor: (Width: 910, Height: 610);
+        LayoutMode: Top;
+
+        // Header
+        Group #HeaderRow {
+            Anchor: (Height: 50);
+            LayoutMode: Center;
+            Label #MasteryTitle {
+                Text: "WEAPON MASTERY";
+                Anchor: (Height: 38);
+                Style: (FontSize: 18, TextColor: #b4c8c9, RenderBold: true, RenderUppercase: true,
+                        VerticalAlignment: Center, HorizontalAlignment: Center, FontName: "Secondary");
+                HitTestVisible: false;
+            }
+        }
+
+        $Common.@ContentSeparator {}
+
+        // Main two-column area
+        Group #ContentRow {
+            FlexWeight: 1;
+            Anchor: (Top: 8, Bottom: 10, Left: 15, Right: 15);
+            LayoutMode: Left;
+
+            // Left info panel
+            $Common.@SimpleContainer #InfoPanel {
+                Anchor: (Width: 250, Top: 0, Bottom: 0);
+                LayoutMode: Top;
+                Padding: (Top: 10, Left: 12, Right: 12, Bottom: 10);
+
+                Label {
+                    Text: "CURRENT ITEM";
+                    Anchor: (Height: 22);
+                    Style: (FontSize: 12, TextColor: #96a9be, HorizontalAlignment: Center, RenderUppercase: true, RenderBold: true);
+                    HitTestVisible: false;
+                }
+                $Common.@ContentSeparator { @Anchor = (Top: 5, Bottom: 6); }
+                ItemSlot #HeldItemSlot { Anchor: (Width: 64, Height: 64, Top: 2); ShowQualityBackground: true; }
+                Label #ItemName { Text: "Item Name"; Anchor: (Height: 28, Top: 5); Style: (FontSize: 15, TextColor: #FFFFFF, RenderBold: true, HorizontalAlignment: Center, VerticalAlignment: Center); HitTestVisible: false; }
+                Label #ItemLevel { Text: "Level 0"; Anchor: (Height: 22); Style: (FontSize: 13, TextColor: #55FF55, HorizontalAlignment: Center, VerticalAlignment: Center); HitTestVisible: false; }
+                Label #ItemMaxLevel { Text: "Max: ∞"; Anchor: (Height: 18); Style: (FontSize: 11, TextColor: #878e9c, HorizontalAlignment: Center, VerticalAlignment: Center); HitTestVisible: false; }
+                $Common.@ContentSeparator { @Anchor = (Top: 8, Bottom: 5); }
+                Group #TokenDisplay {
+                    Anchor: (Height: 48, Top: 4); LayoutMode: Left; Padding: (Left: 55); HitTestVisible: false;
+                    Group #TokenIcon { Anchor: (Width: 32, Height: 32); Background: PatchStyle(TexturePath: "Assets/TokenSystemEnergy.png"); HitTestVisible: false; }
+                    Label #TokensCount { Text: "0"; Anchor: (Width: 40, Height: 32, Left: 8); Style: (FontSize: 26, TextColor: #E8A93B, RenderBold: true, VerticalAlignment: Center); HitTestVisible: false; }
+                }
+            }
+
+            $Common.@VerticalSeparator { Anchor: (Width: 6, Top: 5, Bottom: 5); }
+
+            // Right abilities panel
+            Group #AbilitiesPanel {
+                FlexWeight: 1; Anchor: (Top: 0, Bottom: 0); LayoutMode: Top;
+
+                Label {
+                    Text: "AVAILABLE ABILITIES";
+                    Anchor: (Height: 22);
+                    Style: (FontSize: 12, TextColor: #96a9be, HorizontalAlignment: Center, RenderUppercase: true, RenderBold: true);
+                    HitTestVisible: false;
+                }
+                $Common.@PanelSeparatorFancy { @Anchor = (Top: 5, Bottom: 8); }
+
+                Group #WeaponGrid {
+                    Visible: true; Anchor: (Left: 0, Right: 0); LayoutMode: Top;
+
+                    Group { Anchor: (Height: 78); LayoutMode: Left;
+                        // FIRE ASPECT
+                        Group #AbilityFireAspectContainer { FlexWeight: 1; Anchor: (Height: 75);
+                            Button #AbilityFireAspect {
+                                Anchor: (Top: 0, Bottom: 0, Left: 0, Right: 0);
+                                Style: (
+                                    Default: (Background: #111318),
+                                    Hovered: (Background: #32364A),
+                                    Pressed: (Background: #252836),
+                                    Sounds: (
+                                        Activate: (SoundPath: $Sounds.@Tick, Volume: 10),
+                                        MouseHover: (SoundPath: $Sounds.@ButtonsLightHover, Volume: 6)
+                                    )
+                                );
+                                TooltipText: "Sets the target on fire, dealing burn damage over time.";
+                                TextTooltipStyle: $Common.@DefaultTextTooltipStyle;
+                            }
+                            Group { Anchor: (Top: 0, Bottom: 0, Left: 0, Right: 0); LayoutMode: Left; Padding: (Left: 10); HitTestVisible: false;
+                                Group { Anchor: (Width: 36, Height: 36); Background: PatchStyle(TexturePath: "Assets/TokenSystemFireAspect.png"); HitTestVisible: false; }
+                                Group { LayoutMode: Top; Padding: (Left: 10, Top: 10); HitTestVisible: false;
+                                    Label { Text: "Fire Aspect"; Anchor: (Height: 20); Style: (FontSize: 13, TextColor: #FF8800, RenderBold: true); HitTestVisible: false; }
+                                    Label #AbilityFireAspectLevel { Text: "Cost: 1"; Anchor: (Height: 16); Style: (FontSize: 11, TextColor: #AAAAAA); HitTestVisible: false; }
+                                }
+                            }
+                        }
+                        // VAMPIRISM
+                        Group #AbilityVampirismContainer { FlexWeight: 1; Anchor: (Height: 75, Left: 8);
+                            Button #AbilityVampirism {
+                                Anchor: (Top: 0, Bottom: 0, Left: 0, Right: 0);
+                                Style: (
+                                    Default: (Background: #111318),
+                                    Hovered: (Background: #32364A),
+                                    Pressed: (Background: #252836),
+                                    Sounds: (
+                                        Activate: (SoundPath: $Sounds.@Tick, Volume: 10),
+                                        MouseHover: (SoundPath: $Sounds.@ButtonsLightHover, Volume: 6)
+                                    )
+                                );
+                                TooltipText: "Restores health equal to a portion of damage dealt on hit.";
+                                TextTooltipStyle: $Common.@DefaultTextTooltipStyle;
+                            }
+                            Group { Anchor: (Top: 0, Bottom: 0, Left: 0, Right: 0); LayoutMode: Left; Padding: (Left: 10); HitTestVisible: false;
+                                Group { Anchor: (Width: 36, Height: 36); Background: PatchStyle(TexturePath: "Assets/TokenSystemVampirism.png"); HitTestVisible: false; }
+                                Group { LayoutMode: Top; Padding: (Left: 10, Top: 10); HitTestVisible: false;
+                                    Label { Text: "Vampirism"; Anchor: (Height: 20); Style: (FontSize: 13, TextColor: #FF5555, RenderBold: true); HitTestVisible: false; }
+                                    Label #AbilityVampirismLevel { Text: "Cost: 2"; Anchor: (Height: 16); Style: (FontSize: 11, TextColor: #AAAAAA); HitTestVisible: false; }
+                                }
+                            }
+                        }
+                    }
+
+                    $Common.@ContentSeparator { @Anchor = (Top: 6, Bottom: 6); }
+
+                    Group { Anchor: (Height: 78); LayoutMode: Left;
+                        // POISON
+                        Group #AbilityPoisonContainer { FlexWeight: 1; Anchor: (Height: 75);
+                            Button #AbilityPoison {
+                                Anchor: (Top: 0, Bottom: 0, Left: 0, Right: 0);
+                                Style: (
+                                    Default: (Background: #111318),
+                                    Hovered: (Background: #32364A),
+                                    Pressed: (Background: #252836),
+                                    Sounds: (
+                                        Activate: (SoundPath: $Sounds.@Tick, Volume: 10),
+                                        MouseHover: (SoundPath: $Sounds.@ButtonsLightHover, Volume: 6)
+                                    )
+                                );
+                                TooltipText: "Poisons the target on hit, dealing damage over time.";
+                                TextTooltipStyle: $Common.@DefaultTextTooltipStyle;
+                            }
+                            Group { Anchor: (Top: 0, Bottom: 0, Left: 0, Right: 0); LayoutMode: Left; Padding: (Left: 10); HitTestVisible: false;
+                                Group { Anchor: (Width: 36, Height: 36); Background: PatchStyle(TexturePath: "Assets/TokenSystemPoison.png"); HitTestVisible: false; }
+                                Group { LayoutMode: Top; Padding: (Left: 10, Top: 10); HitTestVisible: false;
+                                    Label { Text: "Poison"; Anchor: (Height: 20); Style: (FontSize: 13, TextColor: #00AA00, RenderBold: true); HitTestVisible: false; }
+                                    Label #AbilityPoisonLevel { Text: "Cost: 1"; Anchor: (Height: 16); Style: (FontSize: 11, TextColor: #AAAAAA); HitTestVisible: false; }
+                                }
+                            }
+                        }
+                        // UNSTOPPABLE
+                        Group #AbilityIgnoreDefenseContainer { FlexWeight: 1; Anchor: (Height: 75, Left: 8);
+                            Button #AbilityIgnoreDefense {
+                                Anchor: (Top: 0, Bottom: 0, Left: 0, Right: 0);
+                                Style: (
+                                    Default: (Background: #111318),
+                                    Hovered: (Background: #32364A),
+                                    Pressed: (Background: #252836),
+                                    Sounds: (
+                                        Activate: (SoundPath: $Sounds.@Tick, Volume: 10),
+                                        MouseHover: (SoundPath: $Sounds.@ButtonsLightHover, Volume: 6)
+                                    )
+                                );
+                                TooltipText: "Your attacks bypass enemy defenses, dealing increased damage.";
+                                TextTooltipStyle: $Common.@DefaultTextTooltipStyle;
+                            }
+                            Group { Anchor: (Top: 0, Bottom: 0, Left: 0, Right: 0); LayoutMode: Left; Padding: (Left: 10); HitTestVisible: false;
+                                Group { Anchor: (Width: 36, Height: 36); Background: PatchStyle(TexturePath: "Assets/TokenSystemIgnoreDefense.png"); HitTestVisible: false; }
+                                Group { LayoutMode: Top; Padding: (Left: 10, Top: 10); HitTestVisible: false;
+                                    Label { Text: "Unstoppable"; Anchor: (Height: 20); Style: (FontSize: 13, TextColor: #AA00FF, RenderBold: true); HitTestVisible: false; }
+                                    Label #AbilityIgnoreDefenseLevel { Text: "Cost: 3"; Anchor: (Height: 16); Style: (FontSize: 11, TextColor: #AAAAAA); HitTestVisible: false; }
+                                }
+                            }
+                        }
+                    }
+
+                    $Common.@ContentSeparator { @Anchor = (Top: 6, Bottom: 6); }
+
+                    Group { Anchor: (Height: 78); LayoutMode: Left;
+                        // ENERGY
+                        Group #AbilityEnergyContainer { Anchor: (Width: 285, Height: 75);
+                            Button #AbilityEnergy {
+                                Anchor: (Top: 0, Bottom: 0, Left: 0, Right: 0);
+                                Style: (
+                                    Default: (Background: #111318),
+                                    Hovered: (Background: #32364A),
+                                    Pressed: (Background: #252836),
+                                    Sounds: (
+                                        Activate: (SoundPath: $Sounds.@Tick, Volume: 10),
+                                        MouseHover: (SoundPath: $Sounds.@ButtonsLightHover, Volume: 6)
+                                    )
+                                );
+                                TooltipText: "Restores stamina on each successful attack.";
+                                TextTooltipStyle: $Common.@DefaultTextTooltipStyle;
+                            }
+                            Group { Anchor: (Top: 0, Bottom: 0, Left: 0, Right: 0); LayoutMode: Left; Padding: (Left: 10); HitTestVisible: false;
+                                Group { Anchor: (Width: 36, Height: 36); Background: PatchStyle(TexturePath: "Assets/TokenSystemEnergy.png"); HitTestVisible: false; }
+                                Group { LayoutMode: Top; Padding: (Left: 10, Top: 10); HitTestVisible: false;
+                                    Label { Text: "Energy Saver"; Anchor: (Height: 20); Style: (FontSize: 13, TextColor: #FFFF55, RenderBold: true); HitTestVisible: false; }
+                                    Label #AbilityEnergyLevel { Text: "Cost: 2"; Anchor: (Height: 16); Style: (FontSize: 11, TextColor: #AAAAAA); HitTestVisible: false; }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                Group #ToolGrid {
+                    Visible: false; Anchor: (Left: 0, Right: 0); LayoutMode: Top;
+
+                    Group { Anchor: (Height: 78); LayoutMode: Left;
+                        // VEIN MINER
+                        Group #AbilityVeinMinerContainer { FlexWeight: 1; Anchor: (Height: 75);
+                            Button #AbilityVeinMiner {
+                                Anchor: (Top: 0, Bottom: 0, Left: 0, Right: 0);
+                                Style: (
+                                    Default: (Background: #111318),
+                                    Hovered: (Background: #32364A),
+                                    Pressed: (Background: #252836),
+                                    Sounds: (
+                                        Activate: (SoundPath: $Sounds.@Tick, Volume: 10),
+                                        MouseHover: (SoundPath: $Sounds.@ButtonsLightHover, Volume: 6)
+                                    )
+                                );
+                                TooltipText: "Mine all connected ore blocks simultaneously (up to 20 blocks).";
+                                TextTooltipStyle: $Common.@DefaultTextTooltipStyle;
+                            }
+                            Group { Anchor: (Top: 0, Bottom: 0, Left: 0, Right: 0); LayoutMode: Left; Padding: (Left: 10); HitTestVisible: false;
+                                Group { Anchor: (Width: 36, Height: 36); Background: PatchStyle(TexturePath: "Assets/TokenSystemVeinMiner.png"); HitTestVisible: false; }
+                                Group { LayoutMode: Top; Padding: (Left: 10, Top: 10); HitTestVisible: false;
+                                    Label { Text: "Vein Miner"; Anchor: (Height: 20); Style: (FontSize: 13, TextColor: #DDDDDD, RenderBold: true); HitTestVisible: false; }
+                                    Label #AbilityVeinMinerLevel { Text: "Cost: 1"; Anchor: (Height: 16); Style: (FontSize: 11, TextColor: #AAAAAA); HitTestVisible: false; }
+                                }
+                            }
+                        }
+                    }
+
+                    $Common.@ContentSeparator { @Anchor = (Top: 6, Bottom: 6); }
+
+                    Group { Anchor: (Height: 78); LayoutMode: Left;
+                        // SMELTING
+                        Group #AbilitySmeltingContainer { FlexWeight: 1; Anchor: (Height: 75);
+                            Button #AbilitySmelting {
+                                Anchor: (Top: 0, Bottom: 0, Left: 0, Right: 0);
+                                Style: (
+                                    Default: (Background: #111318),
+                                    Hovered: (Background: #32364A),
+                                    Pressed: (Background: #252836),
+                                    Sounds: (
+                                        Activate: (SoundPath: $Sounds.@Tick, Volume: 10),
+                                        MouseHover: (SoundPath: $Sounds.@ButtonsLightHover, Volume: 6)
+                                    )
+                                );
+                                TooltipText: "Mined resources are automatically smelted in your inventory.";
+                                TextTooltipStyle: $Common.@DefaultTextTooltipStyle;
+                            }
+                            Group { Anchor: (Top: 0, Bottom: 0, Left: 0, Right: 0); LayoutMode: Left; Padding: (Left: 10); HitTestVisible: false;
+                                Group { Anchor: (Width: 36, Height: 36); Background: PatchStyle(TexturePath: "Assets/TokenSystemSmelter.png"); HitTestVisible: false; }
+                                Group { LayoutMode: Top; Padding: (Left: 10, Top: 10); HitTestVisible: false;
+                                    Label { Text: "Auto Smelt"; Anchor: (Height: 20); Style: (FontSize: 13, TextColor: #FF5500, RenderBold: true); HitTestVisible: false; }
+                                    Label #AbilitySmeltingLevel { Text: "Cost: 1"; Anchor: (Height: 16); Style: (FontSize: 11, TextColor: #AAAAAA); HitTestVisible: false; }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                Group { FlexWeight: 1; }
+
+                $Common.@ContentSeparator {}
+
+                Group #FooterRow {
+                    Anchor: (Height: 55, Top: 8); LayoutMode: Left;
+                    Group { FlexWeight: 1; }
+                    $Common.@CancelTextButton #CloseButton { @Text = "CLOSE"; @Anchor = (Width: 150); }
+                }
+            }
+        }
+    }
+}

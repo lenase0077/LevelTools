@@ -1,0 +1,49 @@
+Group #LevelToolsRoot {
+  Visible: false;
+  Anchor: (Width: 180, Height: 80, Right: 20, Top: 80);
+  LayoutMode: Top;
+
+  Group {
+    Anchor: (Width: 180, Height: 75);
+    Background: PatchStyle(
+       TexturePath: "Assets/LevelToolsBg.png",
+       Border: 8
+    );
+    LayoutMode: Top;
+    Padding: (Left: 10, Right: 10, Top: 8, Bottom: 8);
+
+    Group {
+      Anchor: (Height: 18);
+      LayoutMode: Left;
+      
+      Label #ToolName { Text: "Iron Pickaxe"; Anchor: (Height: 18); Style: (FontSize: 14, RenderBold: true, TextColor: #6BCB77, VerticalAlignment: Center); }
+    }
+
+    Group {
+      Anchor: (Height: 20, Top: 2);
+      LayoutMode: Left;
+      
+      Label #LevelText { Text: "Lv. 0"; Anchor: (Height: 20, Width: 60); Style: (FontSize: 16, RenderBold: true, TextColor: #55FFFF, VerticalAlignment: Center); }
+      
+      Group { FlexWeight: 1; }
+      
+      Label #ExpPercent { Text: "0%"; Anchor: (Height: 20, Width: 40); Style: (FontSize: 12, TextColor: #AAAAAA, VerticalAlignment: Center, HorizontalAlignment: End); }
+    }
+
+    Group {
+      Anchor: (Height: 14, Top: 4);
+      Background: #1a1a2e;
+      
+      ProgressBar #ExpBar {
+         Anchor: (Height: 14, Width: 160);
+         BarTexturePath: "Assets/ExpBar.png";
+      }
+    }
+
+    Group {
+      Anchor: (Height: 12, Top: 2);
+      
+      Label #ExpText { Text: "0 / 150"; Anchor: (Height: 12); Style: (FontSize: 10, TextColor: #888888, VerticalAlignment: Center, HorizontalAlignment: Center); }
+    }
+  }
+}

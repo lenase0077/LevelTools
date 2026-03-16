@@ -1,0 +1,169 @@
+$LegendCommon = "ToolsLegendsCommon.ui";
+
+$LegendCommon.@Legend {
+  #Pages {
+    $LegendCommon.@Page #Page1Basics {
+      @Title = %client.builderTools.legend.PaintBrush.Page1.Title;
+
+      $LegendCommon.@RowLabel {
+        Text: %client.builderTools.legend.PaintBrush.Page1.Description;
+      }
+
+      $LegendCommon.@HotkeyRow {
+        @InputBindingKey = "PrimaryItemAction";
+        @Description = %client.builderTools.legend.PaintBrush.Page1.DestroyBlocks;
+      }
+
+      $LegendCommon.@HotkeyRow {
+        @InputBindingKey = "SecondaryItemAction";
+        @Description = %client.builderTools.legend.PaintBrush.Page1.PlaceBlocks;
+      }
+
+      $LegendCommon.@HotkeyRow {
+        @InputBindingKey = "PickBlock";
+        @Description = %client.builderTools.legend.PaintBrush.Page1.SelectTargetMaterial;
+      }
+
+      $LegendCommon.@HotkeyRow {
+        @InputBindingKey = "PickBlock";
+        @InputBindingKeyPrefix = "SHIFT + ";
+        @Description = %client.builderTools.legend.PaintBrush.Page1.AddTargetMaterial;
+      }
+
+      $LegendCommon.@Separator {}
+
+      $LegendCommon.@HotkeyRow {
+        @InputBindingKey = "UndoItemAction";
+        @InputBindingKeyPrefix = "SHIFT + ";
+        @Description = %client.builderTools.legend.PaintBrush.Page1.UndoLastBrush;
+      }
+
+      $LegendCommon.@HotkeyRow {
+        @InputBindingKey = "RedoItemAction";
+        @InputBindingKeyPrefix = "SHIFT + ";
+        @Description = %client.builderTools.legend.PaintBrush.Page1.RedoLastUndo;
+      }
+
+      $LegendCommon.@Separator {}
+
+      $LegendCommon.@RowLabel {
+        Text: %client.builderTools.legend.shiftFasterChange;
+      }
+
+      $LegendCommon.@DoubleHotkeyRow {
+        @InputBindingKeyOne = "BrushIncreaseHeight";
+        @InputBindingKeyTwo = "BrushDecreaseHeight";
+        @Text = %client.builderTools.legend.changeHeight;
+      }
+
+      $LegendCommon.@DoubleHotkeyRow {
+        @InputBindingKeyOne = "BrushIncreaseWidth";
+        @InputBindingKeyTwo = "BrushDecreaseWidth";
+        @Text = %client.builderTools.legend.changeWidth;
+      }
+
+      $LegendCommon.@Separator {}
+
+      $LegendCommon.@HotkeyRow {
+        @InputBindingKey = "BrushNextRotationFace";
+        @Description = %client.builderTools.legend.changeRotation;
+      }
+
+      $LegendCommon.@HotkeyRow {
+        @InputBindingKey = "OpenInventory";
+        @Description = %client.builderTools.legend.PaintBrush.Page1.EditInventoryProperties;
+      }
+    }
+
+    $LegendCommon.@Page #Page2AxisLockAndMasking {
+      @Title = %client.builderTools.legend.PaintBrush.Page2.Title;
+
+      $LegendCommon.@RowLabel {
+        Text: %client.builderTools.legend.PaintBrush.Page2.AxisLock;
+      }
+
+      $LegendCommon.@RowLabel {
+        Text: %client.builderTools.legend.PaintBrush.Page2.AxisLockDescription;
+      }
+
+      $LegendCommon.@HotkeyRow {
+        @InputBindingKey = "BrushAxisLockTranslate";
+        @InputBindingKeyPrefix = "SHIFT + ";
+        @Description = %client.builderTools.legend.PaintBrush.Page2.ShowSurfaceMoveTool;
+      }
+
+      $LegendCommon.@HotkeyRow {
+        @InputBindingKey = "BrushAxisLockRotate";
+        @InputBindingKeyPrefix = "SHIFT + ";
+        @Description = %client.builderTools.legend.PaintBrush.Page2.ShowSurfaceRotationTool;
+      }
+
+      $LegendCommon.@HotkeyRow {
+        @InputBindingKey = "SecondaryItemAction";
+        @Description = %client.builderTools.legend.PaintBrush.Page2.UseBrush;
+      }
+
+      $LegendCommon.@HotkeyRow {
+        @InputBindingKey = "BrushAxisLockExit";
+        @Description = %client.builderTools.legend.PaintBrush.Page2.ExitAxisLockMode;
+      }
+
+      $LegendCommon.@Separator {}
+
+      $LegendCommon.@RowLabel {
+        Text: %client.builderTools.legend.PaintBrush.Page2.BlockMasking;
+      }
+
+      $LegendCommon.@RowLabel {
+        Text: %client.builderTools.legend.PaintBrush.Page2.BlockMaskingDescription;
+      }
+
+      $LegendCommon.@HotkeyRow {
+        @InputBindingKey = "PickBlock";
+        @InputBindingKeyPrefix = "ALT + ";
+        @Description = %client.builderTools.legend.setMask;
+      }
+
+      $LegendCommon.@HotkeyRow {
+        @InputBindingKey = "PickBlock";
+        @InputBindingKeyPrefix = "SHIFT + ALT + ";
+        @Description = %client.builderTools.legend.addMask;
+      }
+
+      $LegendCommon.@HotkeyRow {
+        @InputBindingKey = "OpenInventory";
+        @Description = %client.builderTools.legend.PaintBrush.Page2.BrushMenuMaskingTab;
+      }
+
+      $LegendCommon.@RowLabel {
+        Text: %client.builderTools.legend.PaintBrush.Page2.MaskConfigDescription;
+      }
+    }
+
+    $LegendCommon.@Page #Page3BrushConfigurations {
+      @Title = %client.builderTools.legend.PaintBrush.Page3.Title;
+
+      $LegendCommon.@RowLabel {
+        Text: %client.builderTools.legend.PaintBrush.Page3.Description;
+      }
+
+      $LegendCommon.@Separator {}
+
+      $LegendCommon.@RowLabel {
+        Text: %client.builderTools.legend.PaintBrush.Page3.CreateBrushesDescription;
+      }
+
+      $LegendCommon.@Separator {}
+
+      $LegendCommon.@RowLabel {
+        Text: %client.builderTools.legend.PaintBrush.Page3.TestingBrushesTitle;
+      }
+
+      $LegendCommon.@RowLabel {
+        Text: %client.builderTools.legend.PaintBrush.Page3.TestingBrushesDescription;
+      }
+
+    }
+
+  }
+}

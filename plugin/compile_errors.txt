@@ -1,0 +1,15 @@
+warning: [options] location of system modules is not set in conjunction with -source 21
+  not setting the location of system modules may lead to class files that cannot run on JDK 21
+    --release 21 is recommended instead of -source 21 -target 21 because it sets the location of system modules automatically
+src\main\java\com\linceros\leveltools\LevelToolsPlugin.java:108: warning: [removal] getUuid() in Entity has been deprecated and marked for removal
+        PlayerRef ref = Universe.get().getPlayer(player.getUuid());
+                                                       ^
+src\main\java\com\linceros\leveltools\LevelToolsSystem.java:292: warning: [removal] getUuid() in Entity has been deprecated and marked for removal
+        LevelToolsPlugin.getHudService().forceRefresh(player.getUuid());
+                                                            ^
+src\main\java\com\linceros\leveltools\command\LevelToolsCommand.java:62: warning: [removal] getUuid() in Entity has been deprecated and marked for removal
+            PlayerRef ref = Universe.get().getPlayer(player.getUuid());
+                                                           ^
+Note: src\main\java\com\linceros\leveltools\LevelToolsSystem.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+4 warnings

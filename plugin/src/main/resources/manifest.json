@@ -1,0 +1,19 @@
+{
+    "Group": "com.linceros",
+    "Name": "LevelTools",
+    "Version": "1.0.0",
+    "Description": "Tools and weapons level up through usage! Higher levels grant more durability, damage, and mining speed. Features a sleek HUD showing level and EXP progress.",
+    "Main": "com.linceros.leveltools.LevelToolsPlugin",
+    "Authors": [
+        {
+            "Name": "Linceros"
+        }
+    ],
+    "ServerVersion": "*",
+    "Dependencies": {},
+    "OptionalDependencies": {
+        "Buuz135:MultipleHUD": "*"
+    },
+    "IncludesAssetPack": true,
+    "DisabledByDefault": false
+}

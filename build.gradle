@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+group 'com.linceros'
+version '2.3.2'
+
+repositories {
+    mavenCentral()
+    maven {
+        name = "hytale-release"
+        url = uri("https://maven.hytale.com/release")
+    }
+    maven {
+        name = "hytale-mods"
+        url = uri("https://maven.hytale-mods.dev/releases")
+    }
+}
+
+dependencies {
+    compileOnly 'com.hypixel.hytale:Server:+'
+    compileOnly 'com.buuz135:MultipleHUD:+'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+}

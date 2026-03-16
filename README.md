@@ -2,12 +2,6 @@
 
 **Don't let your tools break… let them EVOLVE!**
 
-**![](https://i.imgur.com/sClWta7.png)**
-
- 
-
-[![Apoya a Linceros en BisectHosting](https://raw.githubusercontent.com/lenase0077/lenase0077/main/banner.gif)](https://lenase0077.github.io/lenase0077/)
-
  
 
 ### ⚠️ IMPORTANT REQUIREMENT ⚠️
